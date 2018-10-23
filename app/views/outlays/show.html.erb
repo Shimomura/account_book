@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @outlay.amount %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @outlay.date %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @outlay.category_id %>
+</p>
+
+<p>
+  <strong>Wallet:</strong>
+  <%= @outlay.wallet_id %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @outlay.memo %>
+</p>
+
+<%= link_to 'Edit', edit_outlay_path(@outlay) %> |
+<%= link_to 'Back', outlays_path %>
