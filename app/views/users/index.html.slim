@@ -1,0 +1,30 @@
+section.content-header
+  h1 ユーザ一覧
+
+section.content
+  div.box
+    div.box-header.with-border
+      h3.box-title 一覧
+
+    div.box-body
+      table.table.table-bordered.table-hover
+        thead
+          tr
+            th 名前
+            th colspan="3"
+        tbody
+          - @users.each do |user|
+            tr
+              td
+                = user.name
+              td style="width:7em"
+                = fa_icon "eye"
+                = link_to "参照", user
+              td style="width:7em"
+                = fa_icon "pencil"
+                = link_to "編集", edit_product_path(user)
+              td style="with:7em"
+                = fa_icon "remove"
+                = link_to "削除", user, method: :delete, data: { confirm: "削除してよろしいですか?" }
+      br
+      = link_to 'New Product', new_user_path, { class: "btn btn-default" }
