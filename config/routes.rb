@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'categories#index'
+
   resources :categories
   resources :wallet_histories
   resources :incomes
