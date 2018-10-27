@@ -11,17 +11,9 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    debugger
-    @category = Category.new(category_params)
-
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render :show, status: :created, location: @category }
-      else
-        format.html { render :new }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    if Category.create(category_params)
+      redirect_to categories_url, notice: 'カテゴリーを登録しました。'
+    else
     end
   end
 
@@ -40,13 +32,11 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    category = Category.find!(params[:id])
-    rediret_to categories_url, notice: 'このカテゴリーは使用されているため削除できません' if category.outlay
+    category = Category.find(params[:id])
+    #redirect_to categories_path, notice: 'このカテゴリーは使用されているため削除できません。' if category.outlay
 
     category.destroy
-    respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'カテゴリーを削除しました'}
-    end
+    redirect_to categories_path, notice: 'カテゴリーを削除しました。'
   end
 
   private

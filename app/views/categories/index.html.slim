@@ -10,7 +10,7 @@ table.table.table-striped
     - @categories.each do |category|
       tr
         td = category.name
-        td = link_to '削除'
+        td = link_to '削除', category_path(id: category.id), method: :delete
         td = link_to '更新'
 
 br
