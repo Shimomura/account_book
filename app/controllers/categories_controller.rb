@@ -5,25 +5,13 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
-  end
-
-  # GET /categories/1
-  # GET /categories/1.json
-  def show
-  end
-
-  # GET /categories/new
-  def new
-    @category = Category.new
-  end
-
-  # GET /categories/1/edit
-  def edit
+    @category   = Category.new
   end
 
   # POST /categories
   # POST /categories.json
   def create
+    debugger
     @category = Category.new(category_params)
 
     respond_to do |format|
