@@ -1,0 +1,26 @@
+h1 カテゴリ管理
+
+h3 カテゴリ一覧
+table
+  thead
+    tr
+      th カテゴリ名
+      th colspan="2"
+  tbody
+    - @categories.each do |category|
+      tr
+        td = category.name
+        td = link_to '削除'
+        td = link_to '更新'
+
+br
+
+h3 カテゴリ登録
+= form_with(model: @category, local: true) do |form|
+  .row
+    .col-md-2
+      label カテゴリ名
+    .col-md-4
+      = form.text_field :name
+.raw
+  button.btn.btn-primary.btn-lg 登録
