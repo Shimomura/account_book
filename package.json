@@ -8,5 +8,9 @@
   "main": "index.js",
   "repository": "https://github.com/Shimomura/account_book.git",
   "author": "a.shimomura <akitaka.shimomura@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+    "engines": {
+    "yarn": "1.10.1",
+    "node": "10.12.0"
+  }
 }
