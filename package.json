@@ -1,5 +1,12 @@
 {
   "name": "account_book",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "admin-lte": "^2.4.8"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Shimomura/account_book.git",
+  "author": "a.shimomura <akitaka.shimomura@gmail.com>",
+  "license": "MIT"
 }
