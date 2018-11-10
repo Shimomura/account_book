@@ -5,13 +5,14 @@ table.table.table-striped
   thead
     tr
       th カテゴリ名
-      th colspan="2"
+      th
+      /th colspan="2"
   tbody
     - @categories.each do |category|
       tr
         td = category.name
         td = link_to '削除', category_path(id: category.id), method: :delete
-        td = link_to '更新'
+        /td = link_to '更新'
 
 br
 
